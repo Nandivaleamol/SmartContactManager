@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html
+	xmlns:"http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Dashboard page</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="card">
+						<div class="card-body">
+							<div class="text-center">
+								<h2>Change Your Password</h2>
+							</div>
+
+
+							<form id="login-form" class="form" th:action="@{/user/change-password}"
+								action="#" method="post">
+
+								<!-- <div th:if="${param.error}" class="alert alert-danger">
+									Invalid username and password!!</div>
+
+								<div th:if="${param.logout}" class="alert alert-success">
+									You have been logged out!!</div> -->
+
+								<div class="form-group">
+									<label for="oldPassword" class="text-info">Old
+										Password:</label><br> <input type="text" name="oldPassword"
+										id="oldPassword" class="form-control"
+										placeholder="Enter your old password">
+								</div>
+								<div class="form-group">
+									<label for="newPassword" class="text-info">New
+										Password:</label><br> <input type="text" name="newPassword"
+										id="newPassword" class="form-control"
+										placeholder="Enter your new password">
+								</div>
+								<div class="form-group text-center">
+									<input type="submit" name="submit" class="btn btn-info btn-md"
+										value="submit"> 
+										
+									<input type="reset" name="reset"
+										class="btn btn-info btn-warning btn-md" value="reset">
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+		$(document).ready(()=>{
+				$(".item").removeClass("active");
+				$("#settings-link").addClass("active");
+		});
+		
+		</script>
+
+	</section>
+
+</body>
+</html>
